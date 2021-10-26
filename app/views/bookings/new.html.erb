@@ -1,2 +1,15 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+<div class="container">
+  <h1>Create new Objeto acuatico</h1>
+      <div class="bg-white rounded p-3">
+        <h5>Add your review</h5>
+        <%= simple_form_for [@objeto_acuatico, @booking] do |f| %>
+        <%= f.input :checkin %>
+        <%= f.input :checkout %>
+        <%= f.input :capacity %>
+        <%= f.submit class:'btn btn-flat' %>
+        <% end %>
+      </div>
+</div>

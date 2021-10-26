@@ -1,0 +1,53 @@
+rails new \
+  --database postgresql \
+  -m https://raw.githubusercontent.com/lewagon/rails-templates/master/minimal.rb \
+  Aquatic_Ride_Rent
+
+
+  cd Aquatic_Ride_Rent
+
+  gh repo create
+git push origin master
+
+
+heroku create Aquatic_Ride_Rent --region=us
+
+
+git checkout -b development
+
+
+
+git push origin development
+git branch -a
+
+
+
+  resources :objeto_acuatico, only: [ :index, :show, :create, :new ] do
+    resources :bookings, only: :create
+  end
+
+
+  rails g model objeto_acuatico title description
+
+  git branch --set-upstream-to=origin/migraciones master
+
+  rails g controller objetoAcuaticos index show create new
+
+  rails g controller bookings create new
+
+
+  rails g migration RemoveUserFromBooking user:references
+
+
+
+
+  hacer: pasa solucionar problema de class typo
+  rails db:drop
+  rails d migration
+
+  rails d migration 20211025193903_create_bookings
+  rails d migration 20211025193944_create_objeto_acuaticos
+  rails d migration 20211025202021_add_references_to_bookings
+
+  rails db:create
+  rails db:migration
