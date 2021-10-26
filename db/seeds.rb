@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroy all"
+# Bookmark.destroy_all
+
+usuario = User.new(first_name: 'hola', last_name: 'mundo', email: 'correo@example.com', password: '123456')
+
+usuario.save!
+
+obj = ObjetoAcuatico.new(title: 'Motito de agua', description: 'corre rapido buena calidad', location: 'la tortuga', price: 100, capacity: 2, users_id: 1 )
+
+
+obj.save!
