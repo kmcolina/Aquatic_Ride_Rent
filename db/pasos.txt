@@ -51,3 +51,47 @@ git branch -a
 
   rails db:create
   rails db:migration
+
+
+agrege linea (69) en gemfile
+agregue linea (10-12) en config/storage.yml
+
+agrege linea en (34-35)
+# config/environments/development.rb y production
+config.active_storage.service = :cloudinary
+
+
+agregue en el modelo de objeto acuatico (linea 4)
+has_one_attached :photo
+
+agregue :photo en los parametros de controlador objeto acuatico
+
+al agregar photo tuve error ERROR:  relation "active_storage_attachments" does not exist
+
+agregue
+rails active_storage:install
+  se agrego
+    Copied migration 20211026185811_create_active_storage_tables.active_storage.rb from active_storage
+
+  luego hice rails db:migrate
+
+
+
+
+#agregar en el index de objeto acuatico
+<%= cl_image_tag @objeto_acuatico.photo.key, height: 300, width: 400, crop: :fill %>
+
+<%= cloudinary_url @objeto_acuatico.photo.key, height: 300, width: 400, crop: :fill %>
+
+url('<%= cloudinary_url(list.photo.key, :width => 100, :height => 150) %>')">
+
+
+cambie el archivo index de objeto acuatico
+
+cambie el archivo cards.scss
+
+
+
+
+#enviar a una rama remota especifica diferente a la actual
+git push origin add_photo:development

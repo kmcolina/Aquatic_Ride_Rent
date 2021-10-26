@@ -1,3 +1,9 @@
+<h1>VISTA DE EDITAR</h1>
+<% if policy(@objeto_acuatico).create? %>
+  <%= link_to "editar", objeto_acuatico_path(@objeto_acuatico) %>
+<% end %>
+
+
 <%# <h1>ObjetoAcuaticos#new</h1>
 <p>Find me in app/views/objeto_acuaticos/new.html.erb</p>
  %>
@@ -21,7 +27,7 @@
         <%= f.input :location %>
         <%= f.input :price %>
         <%= f.input :capacity %>
-        <%= f.submit value:'Create', class:'btn btn-primary'%>
+        <%= f.submit value:'Update', class:'btn btn-primary'%>
         <%= link_to 'Back', root_path, class:'btn btn-dark'%>
       <% end %>
   </div>

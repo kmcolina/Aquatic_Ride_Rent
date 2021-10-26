@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
     @objeto_acuatico = ObjetoAcuatico.find(params[:objeto_acuatico_id])
     @booking.objeto_acuatico = @objeto_acuatico
   end
@@ -10,9 +11,10 @@ class BookingsController < ApplicationController
   def create
     @objeto_acuatico = ObjetoAcuatico.find(params[:objeto_acuatico_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user_id = current_user.id
     @booking.objeto_acuatico =  @objeto_acuatico
-    if @booking.save!
+    if @booking.save
       redirect_to objeto_acuatico_path(@objeto_acuatico)
     else
       render :new

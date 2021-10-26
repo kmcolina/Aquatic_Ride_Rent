@@ -1,2 +1,25 @@
-<h1>ObjetoAcuaticos#show</h1>
-<p>Find me in app/views/objeto_acuaticos/show.html.erb</p>
+<%# <h1>ObjetoAcuaticos#show</h1>
+<p>Find me in app/views/objeto_acuaticos/show.html.erb</p> %>
+
+<div class="container col-md-5" style="margin-top: 10px">
+  <div class="card">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cloudinary_url(@objeto_acuatico.photo.key, :width => 488, :height => 362) %>');">
+      <div class="container-show">
+        <h2><%= @objeto_acuatico.title %></h2>
+        <div>
+          <p type="button" class="btn btn-primary"><%= link_to 'Rent', new_objeto_acuatico_booking_path(@objeto_acuatico) %></p>
+          <p type="button" class="btn btn-dark"><%= link_to 'Back', objeto_acuaticos_path %></p>
+        </div>
+      </div>
+    </div>
+    <ul class="list-show">
+      <li><strong>Description: </strong><%= @objeto_acuatico.description %></li>
+      <li><strong>Location: </strong><%= @objeto_acuatico.location %></li>
+      <li><strong>Price: </strong><%= @objeto_acuatico.price %> $</li>
+      <li><strong>Capacity: </strong><%= @objeto_acuatico.capacity %></li>
+    </ul>
+    <p class = "btn btn-primary"><%= link_to "editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
+  </div>
+  <%# <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
+  <%# <small><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
+</div>
