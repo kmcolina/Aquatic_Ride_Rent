@@ -84,3 +84,6 @@ rails active_storage:install
 <%= cloudinary_url @objeto_acuatico.photo.key, height: 300, width: 400, crop: :fill %>
 
 url('<%= cloudinary_url(list.photo.key, :width => 100, :height => 150) %>')">
+
+
+git merge origin/development
