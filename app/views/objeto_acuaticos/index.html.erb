@@ -9,9 +9,9 @@
   </div>
   <div class="cards">
   <% @objeto_acuaticos.each do |objeto_acuaticos| %>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 400px;">
       <div class="card-body">
-        <img src="#" alt="Image">
+        <%= cl_image_tag objeto_acuaticos.photo.key,class:'movie-img', height: 300, width: 400, crop: :fill %>
         <div id="title"><%= objeto_acuaticos.title %>
           <p><%= objeto_acuaticos.description %></p>
         </div>

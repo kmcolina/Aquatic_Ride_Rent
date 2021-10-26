@@ -66,6 +66,17 @@ has_one_attached :photo
 
 agregue :photo en los parametros de controlador objeto acuatico
 
+al agregar photo tuve error ERROR:  relation "active_storage_attachments" does not exist
+
+agregue
+rails active_storage:install
+  se agrego
+    Copied migration 20211026185811_create_active_storage_tables.active_storage.rb from active_storage
+
+  luego hice rails db:migrate
+
+
+
 
 #agregar en el index de objeto acuatico
 <%= cl_image_tag @objeto_acuatico.photo.key, height: 300, width: 400, crop: :fill %>
