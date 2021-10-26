@@ -3,7 +3,7 @@
 
 <div class="container col-md-5" style="margin-top: 10px">
   <div class="card">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cloudinary_url(list.photo.key, :width => 488, :height => 362) %>');">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cloudinary_url(@objeto_acuatico.photo.key, :width => 488, :height => 362) %>');">
       <div class="container-show">
         <h2><%= @objeto_acuatico.title %></h2>
         <div>
