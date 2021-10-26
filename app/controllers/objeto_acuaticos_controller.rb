@@ -39,8 +39,9 @@ class ObjetoAcuaticosController < ApplicationController
   end
 
   def destroy
-    @objeto_acuatico.delete
-    redirect_to objeto_acuatico_path
+    authorize @objeto_acuatico
+    @objeto_acuatico.destroy
+    redirect_to objeto_acuaticos_path
   end
 
     private
