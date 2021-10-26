@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     @booking.objeto_acuatico =  @objeto_acuatico
-    if @booking.save!
+    if @booking.save
       redirect_to objeto_acuatico_path(@objeto_acuatico)
     else
       render :new

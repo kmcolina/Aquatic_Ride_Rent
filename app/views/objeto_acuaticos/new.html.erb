@@ -2,16 +2,15 @@
 <p>Find me in app/views/objeto_acuaticos/new.html.erb</p>
  %>
 
-<div class="container">
-  <h1>Create new post</h1>
-
+<div class="container col-md-5" style="margin-top: 10px">
   <div class="bg-white rounded p-3">
+    <h5 class="new-post">New post</h5>
       <%= simple_form_for(@objeto_acuatico) do |f| %>
         <% if @objeto_acuatico.errors.any? %>
           <div class="errors-container">
             <ul>
               <% @objeto_acuatico.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+                <li><% message %></li>
               <% end %>
             </ul>
           </div>
@@ -22,10 +21,8 @@
         <%= f.input :location %>
         <%= f.input :price %>
         <%= f.input :capacity %>
-        <%= f.submit  class:'btn btn-flat'%>
+        <%= f.submit value:'Create', class:'btn btn-primary'%>
+        <%= link_to 'Back', root_path, class:'btn btn-dark'%>
       <% end %>
   </div>
-
-  <%= link_to 'Back', root_path %>
-
 </div>
