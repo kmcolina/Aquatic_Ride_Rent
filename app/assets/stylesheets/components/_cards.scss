@@ -6,6 +6,8 @@
 
 .card {
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  background: white;
   p {
     margin: 0;
     font-weight: normal;
@@ -22,4 +24,14 @@
   font-size: 14px;
   display: flex;
   justify-content: center;
+}
+
+
+
+.movie-img {
+  object-fit: cover;
+  object-position: center;
+  height:220px;
+  width:100%;
+
 }
