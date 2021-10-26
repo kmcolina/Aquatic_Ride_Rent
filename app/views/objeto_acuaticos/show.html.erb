@@ -1,2 +1,22 @@
-<h1>ObjetoAcuaticos#show</h1>
-<p>Find me in app/views/objeto_acuaticos/show.html.erb</p>
+<%# <h1>ObjetoAcuaticos#show</h1>
+<p>Find me in app/views/objeto_acuaticos/show.html.erb</p> %>
+
+<div class="container" style="">
+  <div class="card">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('');">
+      <div class="container-show">
+        <h2><%= @objeto_acuatico.title %></h2>
+        <div>
+          <p type="button" class="btn btn-primary"><%= link_to 'Rent', new_objeto_acuatico_booking_path(@objeto_acuatico) %></p>
+          <p type="button" class="btn btn-dark"><%= link_to 'Back', objeto_acuaticos_path %></p>
+        </div>
+      </div>
+    </div>
+    <ul class="list-show">
+      <li><strong>Description: </strong><%= @objeto_acuatico.description %></li>
+      <li><strong>Location: </strong><%= @objeto_acuatico.location %></li>
+      <li><strong>Price: </strong><%= @objeto_acuatico.price %> $</li>
+      <li><strong>Capacity: </strong><%= @objeto_acuatico.capacity %></li>
+    </ul>
+  </div>
+</div>

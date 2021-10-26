@@ -1,0 +1,25 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  p {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+.card-body #title {
+  font-weight: bold;
+}
+
+.card-body .btn-primary {
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
