@@ -1,3 +1,22 @@
-<h1>ObjetoAcuaticos#index</h1>
-<p>Find me in app/views/objeto_acuaticos/index.html.erb</p>
-<%=@objeto_acuaticos%>
+<%# <h1>ObjetoAcuaticos#index</h1>
+<p>Find me in app/views/objeto_acuaticos/index.html.erb</p> %>
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="header">
+    <h1>Acuatic rides rent</h1>
+  </div>
+  <div class="cards">
+  <% @objeto_acuaticos.each do |objeto_acuaticos| %>
+    <div class="card" style="width: 400px;">
+      <div class="card-body">
+        <%= cl_image_tag objeto_acuaticos.photo.key,class:'movie-img', height: 300, width: 400, crop: :fill %>
+        <div id="title"><%= objeto_acuaticos.title %>
+          <p><%= objeto_acuaticos.description %></p>
+        </div>
+        <div class="btn btn-primary"><%= link_to 'View details', objeto_acuaticos %></div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

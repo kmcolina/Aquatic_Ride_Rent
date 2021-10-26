@@ -16,12 +16,10 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
 
-    <p>
-      <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path(current_user), method: :delete, class:"btn btn-sm btn-danger" %>
-      <% end %>
-    </p>
+      <%= yield %>
+
+  <%= render 'shared/footer' %>
   </body>
+
 </html>

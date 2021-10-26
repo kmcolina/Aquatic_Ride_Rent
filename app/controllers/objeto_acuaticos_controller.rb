@@ -20,6 +20,8 @@ class ObjetoAcuaticosController < ApplicationController
     end
   end
 
+
+
   def new
     @objeto_acuaticos = ObjetoAcuatico.new
     authorize @objeto_acuaticos
@@ -47,7 +49,7 @@ class ObjetoAcuaticosController < ApplicationController
    end
 
   def objeto_acuatico_params
-    params.require(:objeto_acuatico).permit(:title, :description, :location, :price, :capacity, :users_id)
+    params.require(:objeto_acuatico).permit(:title, :description, :location, :price, :capacity, :users_id, :photo)
   end
 
 end

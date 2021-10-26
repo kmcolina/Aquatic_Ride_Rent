@@ -1,2 +1,28 @@
-<h1>ObjetoAcuaticos#new</h1>
+<%# <h1>ObjetoAcuaticos#new</h1>
 <p>Find me in app/views/objeto_acuaticos/new.html.erb</p>
+ %>
+
+<div class="container col-md-5" style="margin-top: 10px">
+  <div class="bg-white rounded p-3">
+    <h5 class="new-post">New post</h5>
+      <%= simple_form_for(@objeto_acuatico) do |f| %>
+        <% if @objeto_acuatico.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @objeto_acuatico.errors.full_messages.each do |message| %>
+                <% message %>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.input :photo, as: :file %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :price %>
+        <%= f.input :capacity %>
+        <%= f.submit value:'Create', class:'btn btn-primary'%>
+        <%= link_to 'Back', root_path, class:'btn btn-dark'%>
+      <% end %>
+  </div>
+</div>
