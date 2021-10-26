@@ -13,6 +13,7 @@ class ObjetoAcuaticosController < ApplicationController
   def create
     @objeto_acuatico = ObjetoAcuatico.new(objeto_acuatico_params)
     authorize @objeto_acuatico
+    @objeto_acuatico.user = current_user
     if @objeto_acuatico.save
       redirect_to objeto_acuatico_path(@objeto_acuatico)
     else
@@ -23,8 +24,8 @@ class ObjetoAcuaticosController < ApplicationController
 
 
   def new
-    @objeto_acuaticos = ObjetoAcuatico.new
-    authorize @objeto_acuaticos
+    @objeto_acuatico = ObjetoAcuatico.new
+    authorize @objeto_acuatico
   end
 
   def edit

@@ -15,8 +15,8 @@
         <li class="nav-item active">
           <%= link_to "Publish new aquatic", new_objeto_acuatico_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+        <li class="nav-item" style = "margin-top: 6px" >
+          <%=current_user.email%>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
