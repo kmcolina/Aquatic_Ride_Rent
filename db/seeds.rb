@@ -12,7 +12,7 @@ usuario = User.new(first_name: 'hola', last_name: 'mundo', email: 'correo@exampl
 
 usuario.save!
 
-obj = ObjetoAcuatico.new(title: 'Motito de agua', description: 'corre rapido buena calidad', location: 'la tortuga', price: 100, capacity: 2, users_id: 1 )
+obj = ObjetoAcuatico.new(title: 'Motito de agua', description: 'corre rapido buena calidad', location: 'la tortuga', price: 100, capacity: 2, user_id: 1 )
 
 
 obj.save!
