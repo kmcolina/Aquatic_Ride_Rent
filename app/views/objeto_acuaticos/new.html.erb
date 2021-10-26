@@ -10,7 +10,7 @@
           <div class="errors-container">
             <ul>
               <% @objeto_acuatico.errors.full_messages.each do |message| %>
-                <li><% message %></li>
+                <% message %>
               <% end %>
             </ul>
           </div>
