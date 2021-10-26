@@ -33,7 +33,7 @@ class ObjetoAcuaticosController < ApplicationController
   end
 
   def objeto_acuatico_params
-    params.require(:objeto_acuatico).permit(:title, :description, :location, :price, :capacity, :users_id)
+    params.require(:objeto_acuatico).permit(:title, :description, :location, :price, :capacity, :users_id, :photo)
   end
 
 end

@@ -1,2 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+
+  h1 {
+    font-size: 32px;
+  }
+}

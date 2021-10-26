@@ -59,3 +59,17 @@ agregue linea (10-12) en config/storage.yml
 agrege linea en (34-35)
 # config/environments/development.rb y production
 config.active_storage.service = :cloudinary
+
+
+agregue en el modelo de objeto acuatico (linea 4)
+has_one_attached :photo
+
+agregue :photo en los parametros de controlador objeto acuatico
+
+
+#agregar en el index de objeto acuatico
+<%= cl_image_tag @objeto_acuatico.photo.key, height: 300, width: 400, crop: :fill %>
+
+<%= cloudinary_url @objeto_acuatico.photo.key, height: 300, width: 400, crop: :fill %>
+
+url('<%= cloudinary_url(list.photo.key, :width => 100, :height => 150) %>')">
