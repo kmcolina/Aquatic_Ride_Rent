@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2021_10_25_202021) do
     t.date "checkin"
     t.date "checkout"
     t.boolean "confirmation"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.bigint "objeto_acuatico_id"
     t.index ["objeto_acuatico_id"], name: "index_bookings_on_objeto_acuatico_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_10_25_202021) do
     t.string "location"
     t.float "price"
     t.integer "capacity"
-    t.bigint "users_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_objeto_acuaticos_on_users_id"
+    t.index ["user_id"], name: "index_objeto_acuaticos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,5 +56,5 @@ ActiveRecord::Schema.define(version: 2021_10_25_202021) do
 
   add_foreign_key "bookings", "objeto_acuaticos"
   add_foreign_key "bookings", "users"
-  add_foreign_key "objeto_acuaticos", "users", column: "users_id"
+  add_foreign_key "objeto_acuaticos", "users"
 end

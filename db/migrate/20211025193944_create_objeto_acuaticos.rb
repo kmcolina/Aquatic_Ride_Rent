@@ -6,7 +6,7 @@ class CreateObjetoAcuaticos < ActiveRecord::Migration[6.1]
       t.string :location
       t.float :price
       t.integer :capacity
-      t.references :users, null: false, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

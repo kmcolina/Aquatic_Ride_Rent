@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  belongs_to :users
-  belongs_to :objeto_acuaticos
+  belongs_to :user
+  belongs_to :objeto_acuatico
   validates :checkin, :checkout, :confirmation, :capacity, presence: true
 end

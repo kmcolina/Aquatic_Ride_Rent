@@ -5,6 +5,7 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.date :checkin
       t.date :checkout
       t.boolean :confirmation
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
