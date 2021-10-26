@@ -51,3 +51,11 @@ git branch -a
 
   rails db:create
   rails db:migration
+
+
+agrege linea (69) en gemfile
+agregue linea (10-12) en config/storage.yml
+
+agrege linea en (34-35)
+# config/environments/development.rb y production
+config.active_storage.service = :cloudinary
