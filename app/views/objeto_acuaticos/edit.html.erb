@@ -1,0 +1,4 @@
+<h1>VISTA DE EDITAR</h1>
+<% if policy(@objeto_acuatico).create? %>
+  <%= link_to "editar", objeto_acuatico_path(@objeto_acuatico) %>
+<% end %>

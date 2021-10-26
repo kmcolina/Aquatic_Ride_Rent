@@ -1,13 +1,12 @@
 class ObjetoAcuaticosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_objeto_acuatico, only: [:show, :edit]
+  before_action :set_objeto_acuatico, only: [:show, :edit, :update, :destroy]
 
   def index
     @objeto_acuaticos = policy_scope(ObjetoAcuatico).order(created_at: :desc)
   end
 
   def show
-    @objeto_acuatico = ObjetoAcuatico.find(params[:id])
     authorize @objeto_acuatico
   end
 
@@ -24,6 +23,21 @@ class ObjetoAcuaticosController < ApplicationController
   def new
     @objeto_acuaticos = ObjetoAcuatico.new
     authorize @objeto_acuaticos
+  end
+
+  def edit
+    authorize @objeto_acuatico
+  end
+
+  def update
+    authorize @objeto_acuatico
+    @objeto_acuatico.update(objeto_acuatico_params)
+    redirect_to objeto_acuatico_path(@objeto_acuatico)
+  end
+
+  def destroy
+    @objeto_acuatico.delete
+    redirect_to objeto_acuatico_path
   end
 
     private
