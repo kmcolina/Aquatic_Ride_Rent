@@ -1,10 +1,14 @@
-<%# <h1>ObjetoAcuaticos#index</h1>
-<p>Find me in app/views/objeto_acuaticos/index.html.erb</p> %>
-<p id="notice"><%= notice %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= asset_path 'bote_azul.jpg' %> );">
+  <div class="text-center">
+    <h1>Rent a aquatic ride</h1>
+    <p>Enjoy</p>
+  </div>
+</div>
+
 
 <div class="container">
   <div class="header">
-    <h1>Acuatic rides rent</h1>
+
   </div>
   <div class="cards">
   <% @objeto_acuaticos.each do |objeto_acuaticos| %>
