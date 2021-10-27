@@ -104,3 +104,4 @@ rails g migration AddCoordinatesToObjetoAcuatico latitude:float longitude:float
 =======
 heroku config:set CLOUDINARY_URL=cloudinary://725255447351873:0f49SjttNQENrnFns0jjKaHRB5Q@dmsb7zzg3
 
+heroku config:set MAPBOX_API_KEY=pk.eyJ1Ijoia21jb2xpbmEiLCJhIjoiY2t1aXA5MjhvMHViaDJwbXhhbWl0cWtqdSJ9.l4s1rXZFN40rLuuXVsOpZg
