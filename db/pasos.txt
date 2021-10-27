@@ -97,11 +97,18 @@ cambie el archivo cards.scss
 git push origin add_photo:development
 
 
-
 #agregando mapas
 
 rails g migration AddCoordinatesToObjetoAcuatico latitude:float longitude:float
-=======
-heroku config:set CLOUDINARY_URL=cloudinary://725255447351873:0f49SjttNQENrnFns0jjKaHRB5Q@dmsb7zzg3
 
-heroku config:set MAPBOX_API_KEY=pk.eyJ1Ijoia21jb2xpbmEiLCJhIjoiY2t1aXA5MjhvMHViaDJwbXhhbWl0cWtqdSJ9.l4s1rXZFN40rLuuXVsOpZg
+
+      <% if current_user && (current_user.id === @objeto_acuatico.user_id ) %>
+          <p class = "btn btn-primary"><%= link_to "editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
+      <% end %>
+
+
+      aquatic-ride-rent
+
+      heroku create aquatic-ride-rent --region eu
+
+      git push heroku mapa
