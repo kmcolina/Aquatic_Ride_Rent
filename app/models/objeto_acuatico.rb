@@ -7,4 +7,14 @@ class ObjetoAcuatico < ApplicationRecord
   validates :title, length: { minimum: 4 }
   validates :price, :numericality => { :greater_than => 0 }
   validates :capacity, :numericality => { :greater_than => 0 }
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
+  def markers
+    {
+      lat: self.latitude,
+      lng: self.longitude
+    }
+  end
 end

@@ -97,4 +97,10 @@ cambie el archivo cards.scss
 git push origin add_photo:development
 
 
+
+#agregando mapas
+
+rails g migration AddCoordinatesToObjetoAcuatico latitude:float longitude:float
+=======
 heroku config:set CLOUDINARY_URL=cloudinary://725255447351873:0f49SjttNQENrnFns0jjKaHRB5Q@dmsb7zzg3
+
