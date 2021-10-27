@@ -100,3 +100,8 @@ git push origin add_photo:development
 #agregando mapas
 
 rails g migration AddCoordinatesToObjetoAcuatico latitude:float longitude:float
+
+
+      <% if current_user && (current_user.id === @objeto_acuatico.user_id ) %>
+          <p class = "btn btn-primary"><%= link_to "editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
+      <% end %>
