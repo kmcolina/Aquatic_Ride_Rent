@@ -1,0 +1,12 @@
+=> [32m#<ObjetoAcuatico:0x0000559917897ca8[0m
+ id: [1;36mnil[0m,
+ title: [31m[1;31m"[0m[31mMotito de agua[1;31m"[0m[31m[0m,
+ description: [31m[1;31m"[0m[31mcorre rapido buena calidad[1;31m"[0m[31m[0m,
+ location: [31m[1;31m"[0m[31m16 Villa Gaudelet, Paris[1;31m"[0m[31m[0m,
+ price: [1;35m100.0[0m,
+ capacity: [1;34m2[0m,
+ user_id: [1;34m7[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m,
+ latitude: [1;36mnil[0m,
+ longitude: [1;36mnil[0m[32m>[0m

@@ -4,10 +4,20 @@ class ObjetoAcuaticosController < ApplicationController
 
   def index
     @objeto_acuaticos = policy_scope(ObjetoAcuatico).order(created_at: :desc)
+
+
   end
 
   def show
     authorize @objeto_acuatico
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    #@objeto_acuaticoss = ObjetoAcuatico.all
+    #@markers = @objeto_acuaticoss.geocoded.map do |flat|
+    #  {
+    #    lat: flat.latitude,
+    #    lng: flat.longitude
+    #  }
+    #end
   end
 
   def create

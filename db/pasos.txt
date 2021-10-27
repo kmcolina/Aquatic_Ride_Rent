@@ -95,3 +95,8 @@ cambie el archivo cards.scss
 
 #enviar a una rama remota especifica diferente a la actual
 git push origin add_photo:development
+
+
+#agregando mapas
+
+rails g migration AddCoordinatesToObjetoAcuatico latitude:float longitude:float

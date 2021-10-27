@@ -22,3 +22,9 @@ obj.save!
 book = Booking.new(checkin: Date.new(2021,10,01), checkout: Date.new(2021,10,03), capacity: 2, objeto_acuatico_id: 3, user_id: 3)
 
 book.save!
+
+
+obj = ObjetoAcuatico.new(title: 'Motito de agua', description: 'corre rapido buena calidad', location: '16 Villa Gaudelet, Paris', price: 100, capacity: 2, user_id: 3)
+obj.save!
+
+ObjetoAcuatico.near('Tour Eiffel', 10)
