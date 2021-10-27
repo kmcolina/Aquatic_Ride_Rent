@@ -31,8 +31,8 @@
      data-markers="[<%= @objeto_acuatico.markers.to_json %>]"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <%# <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
-  <%# <small><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
+    <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
+    <small><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %> </small>
 
 
 
