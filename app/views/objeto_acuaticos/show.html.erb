@@ -18,7 +18,9 @@
       <li><strong>Price: </strong><%= @objeto_acuatico.price %> $</li>
       <li><strong>Capacity: </strong><%= @objeto_acuatico.capacity %></li>
     </ul>
+ <% if current_user.id === @objeto_acuatico.user_id  %>
     <p class = "btn btn-primary"><%= link_to "editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
+ <% end %>
   </div>
   <%# <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
   <%# <small><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
