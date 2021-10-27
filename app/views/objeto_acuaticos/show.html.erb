@@ -21,9 +21,16 @@
       <li><strong>Price: </strong><%= @objeto_acuatico.price %> $</li>
       <li><strong>Capacity: </strong><%= @objeto_acuatico.capacity %></li>
     </ul>
+    <div class="d-flex justify-content-center">
       <% if current_user && (current_user.id === @objeto_acuatico.user_id)  %>
           <p class = "btn btn-primary"><%= link_to "editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
       <% end %>
+
+      <% if current_user && (current_user.id === @objeto_acuatico.user_id) %>
+        <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
+        <small class = "btn btn-dark"><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" } %> </small>
+      <% end %>
+    </div>
   </div>
 
   <div id="map" class="card"
@@ -31,12 +38,5 @@
      data-markers="[<%= @objeto_acuatico.markers.to_json %>]"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-    <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
-    <small><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %> </small>
-
-
-
-
-    </div>
-
+  </div>
 </div>
