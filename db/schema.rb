@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_143730) do
+ActiveRecord::Schema.define(version: 2021_10_28_162438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2021_10_27_143730) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "capacity"
     t.date "checkin"
     t.date "checkout"
     t.boolean "confirmation"

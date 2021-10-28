@@ -2,13 +2,26 @@
   <div class="text-center">
     <h1>Rent a aquatic ride</h1>
     <p>Enjoy</p>
+    <div class="container">
+      <div class="col-md-6 m-auto">
+        <div class="search-form-control form-group">
+          <%= form_tag objeto_acuaticos_path, method: :get do  %>
+            <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find Aquatic Rent" %>
+            <%= button_tag(type: "submit", class: "btn btn-primary ") do %>
+              <i class="fas fa-search"></i> Search
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-
 <div class="container">
   <div class="header">
-
   </div>
   <div class="cards">
     <% @objeto_acuaticos.each do |objeto_acuaticos| %>

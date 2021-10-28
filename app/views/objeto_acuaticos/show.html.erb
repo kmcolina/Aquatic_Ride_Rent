@@ -10,7 +10,9 @@
       <div class="container-show">
         <h2><%= @objeto_acuatico.title %></h2>
         <div>
-          <p type="button" class="btn btn-primary"><%= link_to 'Rent', new_objeto_acuatico_booking_path(@objeto_acuatico) %></p>
+          <% unless current_user && (current_user.id === @objeto_acuatico.user_id)  %>
+            <p type="button" class="btn btn-primary"><%= link_to 'Rent', new_objeto_acuatico_booking_path(@objeto_acuatico) %></p>
+          <% end %>
           <p type="button" class="btn btn-dark"><%= link_to 'Back', objeto_acuaticos_path %></p>
         </div>
       </div>
@@ -23,7 +25,7 @@
     </ul>
     <div class="d-flex justify-content-center">
       <% if current_user && (current_user.id === @objeto_acuatico.user_id)  %>
-          <p class = "btn btn-primary"><%= link_to "editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
+          <p class = "btn btn-primary"><%= link_to "Editar", edit_objeto_acuatico_path(@objeto_acuatico) %></p>
       <% end %>
 
       <% if current_user && (current_user.id === @objeto_acuatico.user_id) %>

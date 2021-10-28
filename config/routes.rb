@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :objeto_acuaticos do
     resources :bookings, only: [:create, :new]
   end
+  resources :bookings, only: :index
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

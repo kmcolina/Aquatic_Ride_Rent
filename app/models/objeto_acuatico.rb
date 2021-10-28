@@ -3,7 +3,7 @@ class ObjetoAcuatico < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
-  validates :title, :location, :price, :capacity, presence: true
+  validates :title, :location, :price, :capacity, :photo, presence: true
   validates :title, length: { minimum: 4 }
   validates :price, :numericality => { :greater_than => 0 }
   validates :capacity, :numericality => { :greater_than => 0 }
@@ -17,4 +17,11 @@ class ObjetoAcuatico < ApplicationRecord
       lng: self.longitude
     }
   end
+
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_location,
+    against: [ :title, :location ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end
