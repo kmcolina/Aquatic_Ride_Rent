@@ -1,10 +1,19 @@
-<h1>Index bookings</h1>
-<%= console %>
+<div class="banner-bookings" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= asset_path 'bote_azul.jpg' %> );">
+  <h1>My bookings</h1>
+</div>
+
+<div class="container">
+  <div class="cards">
     <% @bookings.each do |booking| %>
       <div class="card">
         <div class="card-body">
-          <p><%= booking.checkin %></p>
-          <p><%= booking.objeto_acuatico.title %></p>
+          <%= cl_image_tag booking.objeto_acuatico.photo.key,class:'movie-img', height: 300, width: 400, crop: :fill %>
+          <p style="margin-top: 15px"><strong><%= booking.objeto_acuatico.title %></strong></p>
+          <p><strong>Address: </strong><%= booking.objeto_acuatico.location %></p>
+          <p><strong>Check-In: </strong><%= booking.checkin %></p>
+          <p><strong>Check-Out: </strong><%= booking.checkout %></p>
         </div>
       </div>
     <% end %>
+  </div>
+</div>
