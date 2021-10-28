@@ -4,10 +4,10 @@ class ObjetoAcuaticosController < ApplicationController
 
   def index
     @objeto_acuaticos = policy_scope(ObjetoAcuatico).order(created_at: :desc)
-
-
+    if params[:query].present?
+      @objeto_acuaticos = ObjetoAcuatico.search_by_title_and_location(params[:query])
+    end
   end
-
   def show
     authorize @objeto_acuatico
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
