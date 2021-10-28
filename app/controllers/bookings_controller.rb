@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = policy_scope(Booking).where(user: current_user)
+
+  end
+
   def new
     @booking = Booking.new
     authorize @booking
@@ -28,7 +33,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:checkin, :checkout, :objeto_acuatico_id)
+    params.require(:booking).permit(:checkin, :checkout, :objeto_acuatico_id, :user_id)
   end
 
 

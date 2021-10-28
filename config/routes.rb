@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: 'objeto_acuaticos#index'
 
   resources :objeto_acuaticos do
-    resources :bookings, only: [:create, :new]
+    resources :bookings, only: [:create, :new, :index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
