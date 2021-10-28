@@ -24,10 +24,17 @@
 .container-show {
   padding: 20px;
   text-align: center;
+  color: aliceblue;
 }
 
 .list-show {
   list-style: none;
   margin-top: 10px;
   padding-left: 20px;
+}
+
+small {
+  a{
+    color:aliceblue !important;
+  }
 }
