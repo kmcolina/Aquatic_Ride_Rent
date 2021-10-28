@@ -29,8 +29,7 @@
       <% end %>
 
       <% if current_user && (current_user.id === @objeto_acuatico.user_id) %>
-        <% objeto_acuatico = ObjetoAcuatico.find(params[:id]) %>
-        <small class = "btn btn-dark"><%= link_to "Delete", objeto_acuatico_path(objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" } %> </small>
+        <small class = "btn btn-dark"><%= link_to "Delete", objeto_acuatico_path(@objeto_acuatico), method: :delete, data: { confirm: "Are you sure?" } %> </small>
       <% end %>
     </div>
   </div>
