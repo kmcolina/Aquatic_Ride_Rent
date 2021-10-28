@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:checkin, :checkout, :capacity, :objeto_acuatico_id)
+    params.require(:booking).permit(:checkin, :checkout, :objeto_acuatico_id)
   end
 
 
