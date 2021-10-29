@@ -68,9 +68,13 @@
           <div class="bg-white rounded p-3 card">
             <%= simple_form_for([@objeto_acuatico, @review ], remote:true)do |f| %>
               <%= f.input :comment, placeholder: 'Add your review here...' %>
-              <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { class: 'review_rating' } %>
+              <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
 
-              <%= f.submit class:'btn btn-primary p-1' %>
+              <% if current_user && (current_user.id != @objeto_acuatico.user_id) %>
+                <%= f.submit class: "btn btn-primary p-1" %>
+              <%else %>
+                <small><em class="text-muted">Login to post a review!</em></small>
+              <% end %>
             <% end %>
           </div>
     </div>
