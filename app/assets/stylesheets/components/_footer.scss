@@ -1,5 +1,6 @@
 .footer {
-  background-color: $blue_footer;
+  background: rgb(229,240,244);
+  background: linear-gradient(180deg, rgba(229,240,244,1) 10%, rgba(93,194,224,1) 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +10,7 @@
   margin-top: 40px;
 
   .fa-heart {
-  color: #D23333;
+  color: #0dabdb;
   }
 }
 .footer-links {
@@ -17,14 +18,18 @@
   align-items: center;
 
   a {
-  color: blue_mar;
-  opacity: 0.5;
+  color: #0dabdb;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+  opacity: 0.5;
 }
 
   a:hover {
     opacity: 1;
   }
+}
+
+.footer-copyright {
+  color: rgb(29, 59, 233);
 }
