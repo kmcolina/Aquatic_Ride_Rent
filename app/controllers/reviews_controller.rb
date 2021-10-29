@@ -5,12 +5,20 @@ class ReviewsController < ApplicationController
   def create
     @objeto_acuatico = ObjetoAcuatico.find(params[:objeto_acuatico_id])
     authorize @objeto_acuatico
-    @review = @objeto_acuatico.reviews.build(review_params)
+    @review = Review.new(review_params)
+    @review.objeto_acuatico = @objeto_acuatico
     if @review.save
       redirect_to objeto_acuatico_path(@objeto_acuatico)
     else
       render 'objeto_acuaticos/show'
     end
+    # @review = Review.new(review_params)
+    # @review = @objeto_acuatico.reviews.build(review_params)
+    # if @review.save
+    #   redirect_to objeto_acuatico_path(@objeto_acuatico)
+    # else
+    #   render 'objeto_acuaticos/show'
+    # end
   end
 
   private

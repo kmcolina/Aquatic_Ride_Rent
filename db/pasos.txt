@@ -115,3 +115,9 @@ rails g controller reviews
 yarn add bootstrap@4.6 popper.js jquery
 
 #change migration para references con s extra
+
+#devolver la ultima migracion hecha
+  rake db:rollback
+
+  #ver el estado de las migraciones
+    rake db:migrate:status

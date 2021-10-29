@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 2021_10_28_203803) do
   create_table "reviews", force: :cascade do |t|
     t.string "comment"
     t.integer "rating"
-    t.bigint "objeto_acuaticos_id", null: false
+    t.bigint "objeto_acuatico_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["objeto_acuaticos_id"], name: "index_reviews_on_objeto_acuaticos_id"
+    t.index ["objeto_acuatico_id"], name: "index_reviews_on_objeto_acuatico_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,5 +97,5 @@ ActiveRecord::Schema.define(version: 2021_10_28_203803) do
   add_foreign_key "bookings", "objeto_acuaticos"
   add_foreign_key "bookings", "users"
   add_foreign_key "objeto_acuaticos", "users"
-  add_foreign_key "reviews", "objeto_acuaticos", column: "objeto_acuaticos_id"
+  add_foreign_key "reviews", "objeto_acuaticos"
 end

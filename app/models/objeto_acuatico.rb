@@ -2,7 +2,7 @@ class ObjetoAcuatico < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
-  has_many :reviews, foreign_key: :objeto_acuaticos_id
+  has_many :reviews
 
   validates :title, :location, :price, :capacity, :photo, presence: true
   validates :title, length: { minimum: 4 }
