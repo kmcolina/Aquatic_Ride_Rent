@@ -10,6 +10,8 @@ class ObjetoAcuaticosController < ApplicationController
   end
   def show
     authorize @objeto_acuatico
+    # @review = Review.new
+    @review = Review.new(objeto_acuatico: @objeto_acuatico)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     #@objeto_acuaticoss = ObjetoAcuatico.all
     #@markers = @objeto_acuaticoss.geocoded.map do |flat|
