@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.objeto_acuatico = @objeto_acuatico
     if @review.save
-      redirect_to objeto_acuatico_path(@objeto_acuatico)
+      redirect_to objeto_acuatico_path(@objeto_acuatico, anchor: "review-#{@review.id}")
     else
       render 'objeto_acuaticos/show'
     end
@@ -20,7 +20,6 @@ class ReviewsController < ApplicationController
     #   render 'objeto_acuaticos/show'
     # end
   end
-
   private
 
   def review_params
